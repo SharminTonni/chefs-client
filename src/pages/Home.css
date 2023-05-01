@@ -1,0 +1,7 @@
+.bg {
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://weeattogether.com/wp-content/uploads/2019/07/Red-Potatoes-On-Afterglow-Food-Photography-Backdrop-HORZ.jpg");
+  object-fit: cover;
+  background-position: center;
+}
