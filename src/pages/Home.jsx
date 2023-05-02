@@ -4,6 +4,7 @@ import "./Home.css";
 import Chefs from "./Chefs";
 import Footer from "./Footer";
 import CaouselSection from "../shared/CaouselSection";
+import Restaurents from "../shared/Restaurents";
 
 const Home = () => {
   return (
@@ -24,8 +25,16 @@ const Home = () => {
         </h1>
         <Chefs></Chefs>
       </div>
-
       <div className="mt-28 text-center lg:mx-auto" style={{ width: "80vw" }}>
+        <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
+          Top Restaurents of the Town
+        </h1>
+        <Restaurents></Restaurents>
+      </div>
+      <div className="mt-28 text-center lg:mx-auto" style={{ width: "80vw" }}>
+        <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
+          Dishes of the Week
+        </h1>
         <CaouselSection></CaouselSection>
       </div>
       <Footer></Footer>
