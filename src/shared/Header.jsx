@@ -3,7 +3,7 @@ import ActiveLink from "./ActiveLink";
 
 const Header = () => {
   return (
-    <div className="text-amber-600 lg:flex justify-around pt-10 items-center">
+    <div className="text-amber-600 lg:flex justify-around pt-10 items-center bg-transparent">
       <h1 className="text-6xl font-bold">Taste The English</h1>
 
       <div className="text-2xl font-semibold flex justify-between w-1/3">
