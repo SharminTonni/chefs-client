@@ -26,12 +26,12 @@ const Footer = () => {
             alt=""
           />
           <img
-            className="w-12 h-12"
+            className="w-12 h-12 rounded-full"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png"
             alt=""
           />
           <img
-            className="w-12 h-12"
+            className="w-12 h-12 rounded-full"
             src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-pinterest-social-media-icon-png-image_4235825.jpg"
             alt=""
           />
@@ -54,8 +54,8 @@ const Footer = () => {
           </small>
         </p>
       </footer>
-      <div className="w-full bg-blue-400 text-white py-10 text-center">
-        <h1 className="text-3xl font-semibold">Healthy food is Life</h1>
+      <div className="w-full bg-blue-400 text-white py-3 text-center">
+        <h1 className=" font-semibold">Healthy food is Life</h1>
       </div>
     </div>
   );

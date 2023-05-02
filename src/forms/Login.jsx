@@ -4,9 +4,14 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Footer from "../pages/Footer";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import { useRef } from "react";
 
 const Login = () => {
-  const { logInUser, googleSignin, githubSignin } = useContext(AuthContext);
+  const { logInUser, googleSignin, githubSignin, resetPassword } =
+    useContext(AuthContext);
+
+  const emailRef = useRef();
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -45,6 +50,21 @@ const Login = () => {
         console.log(err);
       });
   };
+
+  const handleReset = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      toast("please Provide Your Email Address");
+      return;
+    }
+    resetPassword(email)
+      .then((result) => {
+        toast("Please Check Your Email");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <form
@@ -62,6 +82,7 @@ const Login = () => {
                   <span className="label-text">Your Email</span>
                 </label>
                 <input
+                  ref={emailRef}
                   type="email"
                   name="email"
                   placeholder="email"
@@ -81,18 +102,31 @@ const Login = () => {
                   required
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <p>
+                    <small>
+                      Fogot Password?
+                      <button
+                        onClick={handleReset}
+                        className="text-blue-400 hover:underline ml-2"
+                      >
+                        Reset Password
+                      </button>
+                    </small>
+                  </p>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-warning btn-outline hover:bg-amber-400">
+                  Login
+                </button>
               </div>
               <label className="label">
                 <span className="label-text">
                   Don't Have an Acoount?
-                  <Link className="text-blue-700 hover:underline" to="/signup">
+                  <Link
+                    className="text-blue-700 hover:underline ml-2"
+                    to="/signup"
+                  >
                     Please Sign Up
                   </Link>
                 </span>
@@ -116,6 +150,7 @@ const Login = () => {
           </div>
         </div>
       </form>
+      <ToastContainer />
 
       <Footer></Footer>
     </div>
