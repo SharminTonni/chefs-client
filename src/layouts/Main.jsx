@@ -7,7 +7,7 @@ const Main = () => {
   const navigation = useNavigation();
 
   return (
-    <div>
+    <div className="w-full">
       <Header></Header>
       <div>
         {navigation.state === "loading" && (

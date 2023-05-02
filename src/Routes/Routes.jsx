@@ -6,6 +6,7 @@ import Recipes from "../pages/Recipes";
 import Login from "../forms/Login";
 import SignUp from "../forms/SignUp";
 import ErrorPage from "../pages/ErrorPage";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "chef/:id",

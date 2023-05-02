@@ -14,7 +14,7 @@ const Footer = () => {
             The Royal Taste
           </p>
         </div>
-        <div className="md:flex justify-center gap-10 pb-12  items-center">
+        <div className="flex justify-center gap-10 pb-12  items-center">
           <img
             className="w-12 h-12"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"

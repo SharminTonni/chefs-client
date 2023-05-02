@@ -15,7 +15,7 @@ const Recipe = ({ recipe }) => {
     toast("added as favorite");
   };
   return (
-    <div className="card w-96 bg-gradient-to-r from-indigo-400  shadow-xl image-full">
+    <div className="card w-full bg-gradient-to-r from-indigo-400  shadow-xl image-full">
       <figure>
         <img src={image} alt="Food" />
       </figure>

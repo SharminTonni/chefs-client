@@ -34,13 +34,13 @@ const Recipes = () => {
           <div className="bg-gradient-to-r from-indigo-300 py-20 lg:flex mt-10 justify-around">
             <div>
               <img
-                className="ml-10"
-                style={{ maxWidth: "600px" }}
+                style={{ width: "100vw" }}
+                className="lg:ml-10"
                 src={chefs.image}
                 alt="chef's picture"
               />
             </div>
-            <div className="text-center mx-auto">
+            <div className="text-center lg:mx-auto">
               <p className="text-5xl font-bold ">{chefs.name}</p>
               <p className="mt-5 w-2/3 mx-auto">
                 <i>{chefs.description}</i>

@@ -24,7 +24,7 @@ const Chefs = () => {
           max="100"
         ></progress>
       ) : (
-        <div className="grid lg:grid-cols-3 w-5/6 mx-auto">
+        <div className="grid lg:grid-cols-3 w-5/6 lg:mx-auto">
           {chefs.map((chef) => (
             <Chef key={chef.id} chef={chef}></Chef>
           ))}
