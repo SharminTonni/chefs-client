@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Header from "../shared/Header";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { space } from "postcss/lib/list";
+import Footer from "../pages/Footer";
 
 const SignUp = () => {
+  const { createUser, user } = useContext(AuthContext);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,11 +19,43 @@ const SignUp = () => {
     const photo = form.photo.value;
     const password = form.password.value;
     console.log(name, email, photo, password);
+
+    createUser(email, password).then((result) => {
+      const createdUser = result.user;
+      console.log(createdUser);
+      updateUser(createdUser, name);
+      updatePhoto(createdUser, photo);
+      form.reset();
+    });
+  };
+
+  const updateUser = (user, name) => {
+    updateProfile(user, {
+      displayName: name,
+    })
+      .then((result) => {})
+      .catch((err) => console.log(err));
+  };
+
+  const updatePhoto = (user, photo) => {
+    updateProfile(user, {
+      photoURL: photo,
+    })
+      .then()
+      .catch();
+  };
+
+  const handlePassword = (e) => {
+    const passwordInput = e.target.value;
+    setPassword(passwordInput);
+    if (passwordInput.length < 6) {
+      setError("password must be at least 6 characters");
+    } else {
+      setError("");
+    }
   };
   return (
     <div>
-      <Header></Header>
-
       <form
         onSubmit={handleSignUp}
         className="hero bg-base-200 mt-10 w-5/6 mx-auto py-10"
@@ -35,6 +75,7 @@ const SignUp = () => {
                   name="name"
                   placeholder="name"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -46,6 +87,7 @@ const SignUp = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -66,12 +108,16 @@ const SignUp = () => {
                 <input
                   type="text"
                   name="password"
+                  value={password}
                   placeholder="password"
                   className="input input-bordered"
+                  onChange={handlePassword}
+                  required
                 />
               </div>
+              {error && <span className="text-red-600">{error}</span>}
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">SignUp</button>
               </div>
               <label className="label">
                 <span className="label-text">
@@ -85,6 +131,7 @@ const SignUp = () => {
           </div>
         </div>
       </form>
+      <Footer></Footer>
     </div>
   );
 };

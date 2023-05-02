@@ -23,7 +23,6 @@ const Recipes = () => {
   console.log(recipes);
   return (
     <div className="  h-full pb-10">
-      <Header></Header>
       {loading ? (
         <progress
           className="progress progress-info w-56"
