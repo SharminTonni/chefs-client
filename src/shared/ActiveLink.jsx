@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const ActiveLink = ({ to, chilren }) => {
+const ActiveLink = ({ to, children }) => {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => (isActive ? "text-blue-600" : "")}
+      className={({ isActive }) => (isActive ? "text-blue-500" : "")}
     >
-      {chilren}
+      {children}
     </NavLink>
   );
 };

@@ -1,7 +1,11 @@
 .bg {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
-  background-image: url("https://weeattogether.com/wp-content/uploads/2019/07/Red-Potatoes-On-Afterglow-Food-Photography-Backdrop-HORZ.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.shutterstock.com/image-photo/fresh-delicious-burger-closeup-on-260nw-565608874.jpg");
+  background-color: rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  background-size: cover;
   object-fit: cover;
   background-position: center;
 }
