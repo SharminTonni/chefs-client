@@ -19,7 +19,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-indigo-300 py-10 mt-28">
+      <div className="bg-gradient-to-r from-blue-200 py-10 mt-28">
         <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
           Top Chefs From England
         </h1>

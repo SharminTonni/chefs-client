@@ -11,6 +11,7 @@ import "swiper/swiper-bundle.min.css";
 const CaouselSection = () => {
   return (
     <Swiper
+      className=""
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -38,7 +39,7 @@ const CaouselSection = () => {
         <img
           className="mx-auto"
           style={{ width: "70vw", height: "70vh" }}
-          src="https://www.nigella.com/assets/uploads/recipes/public-thumbnail/lemon-polenta-cake-563a6559b0fb7.jpg"
+          src="https://www.tastingtable.com/img/gallery/classic-british-fish-and-chips-recipe/intro-1670356962.jpg"
           alt=""
         />
       </SwiperSlide>

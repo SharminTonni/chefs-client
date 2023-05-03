@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const Restaurents = () => {
   return (
-    <Marquee>
+    <Marquee className="">
       <div className="card w-96 bg-base-100 shadow-xl mr-8">
         <figure>
           <img

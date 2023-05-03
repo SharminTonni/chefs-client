@@ -5,6 +5,7 @@ import Recipe from "./Recipe";
 import { removeItem } from "localforage";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import Footer from "./Footer";
 
 const Recipes = () => {
   const chefs = useLoaderData();
@@ -24,7 +25,7 @@ const Recipes = () => {
   }, []);
   console.log(recipes);
   return (
-    <div className="  h-full pb-10">
+    <div className="  h-full">
       {loading ? (
         <progress
           className="progress progress-info w-56"
@@ -69,6 +70,7 @@ const Recipes = () => {
           </div>
         </>
       )}
+      <Footer></Footer>
     </div>
   );
 };
