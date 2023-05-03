@@ -1,10 +1,10 @@
-#The Royal Taste
+# The Royal Taste
 
 - All the routes have a navbar and a footer
 - The Home Page
   _ has a banner
   _ has a chef's section
-  _ a restaurent's section
+  _ a restaurant section
   _ a food slider section
 - it has a blog page with pdf button
 - it has a login page
@@ -15,6 +15,6 @@
   _ if the user is not logged in
   \_ when the user is logged in he/she will be redirect to the recipe page
 
-- The recipe page includes a favourite button
+- The recipe page includes a favorite button
 
 [The Royal Taste](https://taste-the-english.web.app)
