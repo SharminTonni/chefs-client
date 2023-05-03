@@ -34,13 +34,13 @@ const SignUp = () => {
         const createdUser = result.user;
         console.log(createdUser);
         navigate("/");
+        form.reset();
 
         updateUser(name, photo)
           .then((result) => {
             setReload(new Date().getTime());
           })
           .catch((err) => console.log(err));
-        form.reset();
       })
       .catch((err) => setError(err.message));
   };
