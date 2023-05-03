@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Recipe = ({ recipe }) => {
   const { recipe_name, ingredients, image, cooking_method, rating } = recipe;
-  const [showMore, setShowMore] = useState(false);
+
   const [isDisabled, setDisabled] = useState(false);
 
   const handleFavorite = () => {

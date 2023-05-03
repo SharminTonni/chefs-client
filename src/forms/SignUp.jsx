@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Header from "../shared/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { space } from "postcss/lib/list";
@@ -60,7 +60,6 @@ const SignUp = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err.message);
@@ -73,7 +72,6 @@ const SignUp = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err.message);

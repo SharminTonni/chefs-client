@@ -39,7 +39,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://chef-server-phi.vercel.app/chefs/${params.id}`),
+          fetch(`https://chef-server-phi.vercel.app/chefs/${params.id}`)
+            .then((res) => res.json())
+            .then((data) => data),
       },
     ],
   },

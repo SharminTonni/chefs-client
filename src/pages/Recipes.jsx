@@ -12,7 +12,7 @@ const Recipes = () => {
   const { id } = useParams();
   const [recipes, setRecipes] = useState([]);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -21,6 +21,7 @@ const Recipes = () => {
       .then((data) => {
         setLoading(false);
         setRecipes(data);
+        console.log("data fetching");
       });
   }, []);
   console.log(recipes);
@@ -34,10 +35,9 @@ const Recipes = () => {
         ></progress>
       ) : (
         <>
-          <div className="bg-gradient-to-r from-indigo-300 py-20 lg:flex mt-10 justify-around">
+          <div className="bg-gradient-to-r from-indigo-300 py-20 flex mt-10">
             <div>
-              <LazyLoadImage
-                effect="blur"
+              <img
                 style={{ width: "100vw" }}
                 className="lg:ml-10"
                 src={chefs.image}

@@ -15,7 +15,7 @@ const Home = () => {
             <i>Delicious English Food recipes for You to Try!!!</i>
           </h2>
           <p className="text-2xl font-semibold text-blue-400 mt-5">
-            <i>From the World's Best Chefs</i>
+            <i>From the World's Best Chef's</i>
           </p>
         </div>
       </div>

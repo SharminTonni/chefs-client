@@ -12,7 +12,7 @@ const Chef = ({ chef }) => {
         <figure>
           <LazyLoadImage
             effect="blur"
-            className="img-fluid h-72 w-full"
+            className="img-fluid h-72 w-96"
             src={image}
             alt="Shoes"
           />

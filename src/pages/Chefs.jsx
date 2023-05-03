@@ -16,7 +16,7 @@ const Chefs = () => {
   }, []);
 
   return (
-    <>
+    <div>
       {loading ? (
         <progress
           className="progress progress-info w-56"
@@ -30,7 +30,7 @@ const Chefs = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
