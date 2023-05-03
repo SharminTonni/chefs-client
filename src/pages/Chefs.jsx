@@ -7,7 +7,7 @@ const Chefs = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/chefs")
+    fetch("https://chef-server-phi.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);

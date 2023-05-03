@@ -148,7 +148,10 @@ const SignUp = () => {
               <label className="label">
                 <span className="label-text">
                   Already Have an Account?
-                  <Link className="text-blue-700 hover:underline" to="/login">
+                  <Link
+                    className="text-blue-700 ml-2 hover:underline"
+                    to="/login"
+                  >
                     Please Login
                   </Link>
                 </span>

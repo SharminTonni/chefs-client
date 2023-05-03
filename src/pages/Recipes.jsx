@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../shared/Header";
+
 import { useLoaderData, useParams } from "react-router-dom";
 import Recipe from "./Recipe";
 import { removeItem } from "localforage";
@@ -16,7 +16,7 @@ const Recipes = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/recipes/${id}`)
+    fetch(`https://chef-server-phi.vercel.app/recipes/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
