@@ -70,6 +70,11 @@ const Recipes = () => {
           </div>
         </>
       )}
+
+      {/* 
+        Footer Section
+
+      */}
       <Footer></Footer>
     </div>
   );

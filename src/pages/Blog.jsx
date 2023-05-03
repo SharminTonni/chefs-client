@@ -6,6 +6,7 @@ import ReactToPrint from "react-to-print";
 const Blog = () => {
   const text = useRef();
   return (
+    // ----------------Blog Page Section
     <div className="bg-base-200 pt-10">
       <div className="lg:mx-20 h-full my-12 pb-10">
         <div className="flex justify-center gap-5 items-center">
@@ -97,6 +98,10 @@ const Blog = () => {
           </div>
         </div>
       </div>
+
+      {/* 
+        -----------------Footer Section------------------------------------------------
+    */}
       <Footer></Footer>
     </div>
   );
