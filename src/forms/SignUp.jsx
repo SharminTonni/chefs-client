@@ -1,15 +1,24 @@
 import React, { useContext, useState } from "react";
 import Header from "../shared/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { space } from "postcss/lib/list";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import Footer from "../pages/Footer";
 
 const SignUp = () => {
-  const { createUser, user } = useContext(AuthContext);
+  const {
+    createUser,
+    user,
+    updateUser,
+    setReload,
+    googleSignin,
+    githubSignin,
+  } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -20,29 +29,20 @@ const SignUp = () => {
     const password = form.password.value;
     console.log(name, email, photo, password);
 
-    createUser(email, password).then((result) => {
-      const createdUser = result.user;
-      console.log(createdUser);
-      updateUser(createdUser, name);
-      updatePhoto(createdUser, photo);
-      form.reset();
-    });
-  };
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        navigate("/");
 
-  const updateUser = (user, name) => {
-    updateProfile(user, {
-      displayName: name,
-    })
-      .then((result) => {})
-      .catch((err) => console.log(err));
-  };
-
-  const updatePhoto = (user, photo) => {
-    updateProfile(user, {
-      photoURL: photo,
-    })
-      .then()
-      .catch();
+        updateUser(name, photo)
+          .then((result) => {
+            setReload(new Date().getTime());
+          })
+          .catch((err) => console.log(err));
+        form.reset();
+      })
+      .catch((err) => setError(err.message));
   };
 
   const handlePassword = (e) => {
@@ -53,6 +53,32 @@ const SignUp = () => {
     } else {
       setError("");
     }
+  };
+
+  const handleGoogle = () => {
+    googleSignin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.log(err);
+      });
+  };
+
+  const handleGithub = () => {
+    githubSignin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.log(err);
+      });
   };
   return (
     <div>
@@ -121,12 +147,28 @@ const SignUp = () => {
               </div>
               <label className="label">
                 <span className="label-text">
-                  Already Have an Account?{" "}
+                  Already Have an Account?
                   <Link className="text-blue-700 hover:underline" to="/login">
                     Please Login
                   </Link>
                 </span>
               </label>
+
+              <hr />
+              <label className="label text-center mx-auto">
+                <span className="label-text text-slate-500">Or Login With</span>
+              </label>
+              <button
+                onClick={handleGoogle}
+                className="btn btn-outline btn-info"
+              >
+                <FaGoogle />
+                <span className="ml-2">Login With Google</span>
+              </button>
+              <button onClick={handleGithub} className="btn btn-outline">
+                <FaGithub />
+                <span className="ml-2">Login With Github</span>
+              </button>
             </div>
           </div>
         </div>

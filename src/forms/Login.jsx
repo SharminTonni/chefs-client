@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../shared/Header";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../pages/Footer";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,8 +10,12 @@ import { useRef } from "react";
 const Login = () => {
   const { logInUser, googleSignin, githubSignin, resetPassword } =
     useContext(AuthContext);
-
+  const [error, setError] = useState("");
   const emailRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || "/";
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -23,9 +27,11 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
+        setError(err.message);
       });
   };
 
@@ -34,8 +40,10 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
+        setError(err.message);
         console.log(err);
       });
   };
@@ -45,8 +53,10 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
+        setError(err.message);
         console.log(err);
       });
   };
@@ -101,6 +111,9 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
+                <p className="text-red-600">
+                  <small>{error}</small>
+                </p>
                 <label className="label">
                   <p>
                     <small>

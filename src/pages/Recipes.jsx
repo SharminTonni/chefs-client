@@ -3,6 +3,8 @@ import Header from "../shared/Header";
 import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import Recipe from "./Recipe";
 import { removeItem } from "localforage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Recipes = () => {
   const chefs = useLoaderData();
@@ -33,7 +35,8 @@ const Recipes = () => {
         <>
           <div className="bg-gradient-to-r from-indigo-300 py-20 lg:flex mt-10 justify-around">
             <div>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 style={{ width: "100vw" }}
                 className="lg:ml-10"
                 src={chefs.image}
