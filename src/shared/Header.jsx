@@ -27,15 +27,21 @@ const Header = () => {
       <div className="mx-auto text-center lg:flex items-center gap-3">
         {user ? (
           <>
-            {user.photoURL ? (
-              <img
-                title={user?.displayName}
-                className="w-16 rounded-full text-center mx-auto"
-                src={user.photoURL}
-                alt="user photo"
-              />
+            {user?.photoURL ? (
+              <>
+                <div
+                  className="tooltip tooltip-bottom"
+                  data-tip={user?.displayName}
+                >
+                  <img
+                    className="w-16 rounded-full text-center mx-auto"
+                    src={user?.photoURL}
+                    alt="user photo"
+                  />
+                </div>
+              </>
             ) : (
-              <span>{user.displayName}</span>
+              <span>{user?.displayName}</span>
             )}
             <button
               onClick={handleLogOut}

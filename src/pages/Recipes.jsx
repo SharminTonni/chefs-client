@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../shared/Header";
-import { useLoaderData, useNavigation, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Recipe from "./Recipe";
 import { removeItem } from "localforage";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -10,7 +10,7 @@ const Recipes = () => {
   const chefs = useLoaderData();
   const { id } = useParams();
   const [recipes, setRecipes] = useState([]);
-  const navigation = useNavigation();
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
