@@ -176,7 +176,7 @@ const SignUp = () => {
           </div>
         </div>
       </form>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

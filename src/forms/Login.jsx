@@ -165,7 +165,7 @@ const Login = () => {
       </form>
       <ToastContainer />
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

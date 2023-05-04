@@ -26,44 +26,17 @@ const Home = () => {
 -------------- -------Chefs card section -------------------
        */}
 
-      <div className="bg-gradient-to-r from-blue-200 py-10 mt-28">
-        <h1 className="text-center mb-5 text-5xl font-bold text-amber-500 font-serif">
-          Top Chefs From England
-        </h1>
-        <p className="text-center mb-5 text-xl font-bold text-amber-500 font-serif">
-          Want to have their food on your table?
-        </p>
-        <p className="text-center mb-5 text-xl text-amber-500 font-serif">
-          You can join their cooking course online
-        </p>
-        <p className="text-center mb-10 text-xl text-amber-500 font-serif">
-          Please send us Your Email Address
-          <br />
-          <input type="text" />
-          <button className="btn btn-info ml-4 font-serif">Email</button>
-        </p>
-
-        <Chefs></Chefs>
-      </div>
+      <Chefs></Chefs>
 
       {/* 
       -----------------------Restaurant Carousel section---------------------------
       */}
-      <div className="mt-28 text-center lg:mx-auto" style={{ width: "80vw" }}>
-        <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
-          Top Restaurents of the Town
-        </h1>
-        <p className="text-center mb-5 text-xl font-bold text-amber-500 font-serif">
-          Visit them to taste Authentic Royal Food ...
-        </p>
-        <Restaurents></Restaurents>
-      </div>
-      <div className="mt-28 text-center lg:mx-auto" style={{ width: "80vw" }}>
-        <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
-          Dishes of the Week
-        </h1>
-        <CaouselSection></CaouselSection>
-      </div>
+
+      <Restaurents></Restaurents>
+
+      {/* _--------------------------Carousel Section--------------------------- */}
+
+      <CaouselSection></CaouselSection>
 
       {/* 
         -----------------Footer Section ------------------

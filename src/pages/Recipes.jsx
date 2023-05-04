@@ -75,7 +75,7 @@ const Recipes = () => {
         Footer Section
 
       */}
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

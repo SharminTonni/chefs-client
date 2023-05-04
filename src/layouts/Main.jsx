@@ -14,6 +14,7 @@ const Main = () => {
           <progress className="progress progress-warning w-56"></progress>
         )}
       </div>
+
       <div className="w-full">
         <Outlet></Outlet>
       </div>
