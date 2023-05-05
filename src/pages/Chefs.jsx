@@ -39,8 +39,15 @@ const Chefs = () => {
             <p className="text-center mb-10 text-xl text-amber-500 font-serif">
               Please send us Your Email Address
               <br />
-              <input type="text" />
-              <button className="btn btn-info ml-4 font-serif">Email</button>
+              <input
+                className="bg-slate-100 py-2 pl-2 mt-4"
+                type="text"
+                name="text"
+                placeholder="Your Email"
+              />
+              <button className="btn btn-info ml-4 py-0 font-serif normal-case">
+                Send
+              </button>
             </p>
           </div>
           <div className="grid lg:grid-cols-3 text-center pb-5 lg:pl-20 w-full lg:mx-auto">
