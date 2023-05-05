@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 import { space } from "postcss/lib/list";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import Footer from "../pages/Footer";
+import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
   const {
@@ -29,20 +30,27 @@ const SignUp = () => {
     const password = form.password.value;
     console.log(name, email, photo, password);
 
-    createUser(email, password)
-      .then((result) => {
-        const createdUser = result.user;
-        console.log(createdUser);
-        navigate("/");
-        form.reset();
+    if (email && password) {
+      createUser(email, password)
+        .then((result) => {
+          const createdUser = result.user;
+          console.log(createdUser);
+          navigate("/");
+          form.reset();
 
-        updateUser(name, photo)
-          .then((result) => {
-            setReload(new Date().getTime());
-          })
-          .catch((err) => console.log(err));
-      })
-      .catch((err) => setError(err.message));
+          updateUser(name, photo)
+            .then((result) => {
+              setReload(new Date().getTime());
+            })
+            .catch((err) => console.log(err));
+        })
+        .catch((err) => setError(err.message));
+    } else {
+      toast("provide email and password", {
+        autoClose: 1000,
+      });
+      return;
+    }
   };
 
   const handlePassword = (e) => {

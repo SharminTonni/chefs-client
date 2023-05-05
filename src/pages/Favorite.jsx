@@ -32,10 +32,9 @@ const Favorite = () => {
                 key={recipe.id}
                 className="card w-3/4 text-left mx-auto card-side my-12 bg-slate-200 shadow-xl"
               >
-                <figure>
+                <figure className="w-1/2">
                   <img
-                    style={{ width: "550px", height: "200px" }}
-                    className="ml-3 rounded-lg"
+                    className="ml-3 rounded-lg w-96 h-full"
                     src={recipe.image}
                     alt="Movie"
                   />

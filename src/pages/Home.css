@@ -15,7 +15,7 @@
   left: -50%;
   right: -50%; */
   /* animation: animate 5s ease-in-out infinite alternate; */
-  background: linear-gradient(to right, #159957, #3393f3);
+  background: linear-gradient(to right, #83f8f6, #fbf98e);
   /* opacity: 0.5; */
   z-index: -1;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chef from "../shared/Chef";
 import "./Home.css";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Chefs = () => {
   const [chefs, setChefs] = useState([]);
@@ -19,11 +20,7 @@ const Chefs = () => {
   return (
     <div className=" ">
       {loading ? (
-        <progress
-          className="progress progress-info w-56"
-          value="70"
-          max="100"
-        ></progress>
+        <InfinitySpin width="200" color="#4fa94d" />
       ) : (
         <div className="">
           <div className=" py-16 mt-28">

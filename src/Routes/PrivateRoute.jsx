@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import { InfinitySpin } from "react-loader-spinner";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -8,11 +9,11 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <progress
-        className="progress progress-accent w-56"
-        value="70"
-        max="100"
-      ></progress>
+      <InfinitySpin
+        width="200"
+        className="mx-auto text-center"
+        color="#4fa94d"
+      />
     );
   }
   if (user) {

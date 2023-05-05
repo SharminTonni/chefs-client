@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "../pages/Footer";
 import Header from "../shared/Header";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Main = () => {
   const navigation = useNavigation();
@@ -11,7 +12,11 @@ const Main = () => {
       <Header></Header>
       <div>
         {navigation.state === "loading" && (
-          <progress className="progress progress-warning w-56"></progress>
+          <InfinitySpin
+            width="200"
+            className="mx-auto text-center"
+            color="#4fa94d"
+          />
         )}
       </div>
 

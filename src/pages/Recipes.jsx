@@ -7,6 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Footer from "./Footer";
 import "./Home.css";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Recipes = () => {
   const chefs = useLoaderData();
@@ -30,11 +31,11 @@ const Recipes = () => {
   return (
     <div className=" h-full">
       {loading ? (
-        <progress
-          className="progress progress-info w-56"
-          value="70"
-          max="100"
-        ></progress>
+        <InfinitySpin
+          width="200"
+          className="mx-auto text-center"
+          color="#4fa94d"
+        />
       ) : (
         <>
           <div className="bg-area py-20 flex mt-10">
