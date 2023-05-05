@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ActiveLink from "./ActiveLink";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
@@ -7,7 +7,19 @@ import Lottie from "lottie-react";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
   console.log(user);
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const handleLogOut = (e) => {
     logOut()
@@ -15,7 +27,7 @@ const Header = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="text-amber-600 lg:flex justify-around py-5 items-center   lg:mx-12">
+    <div className="text-amber-600 lg:flex justify-around py-5 items-center dark:bg-black  lg:mx-12">
       <div className="text-center flex justify-center items-center ">
         <Lottie
           style={{ width: "100px" }}
@@ -26,6 +38,7 @@ const Header = () => {
           The Royal Taste
         </p>
       </div>
+
       <div className="mx-auto text-center flex items-center gap-3">
         {user ? (
           <>

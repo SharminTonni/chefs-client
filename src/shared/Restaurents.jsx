@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const Restaurents = () => {
   return (
-    <div>
+    <div className="dark:bg-black">
       <div className="mt-28 text-center lg:mx-auto" style={{ width: "80vw" }}>
         <h1 className="text-center mb-10 text-5xl font-bold text-amber-500 font-serif">
           Top Restaurents of the Town

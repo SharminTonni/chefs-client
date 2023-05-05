@@ -89,7 +89,7 @@ const SignUp = () => {
       });
   };
   return (
-    <div>
+    <div className=" ">
       <form
         onSubmit={handleSignUp}
         className="hero bg-base-200 mt-10 w-5/6 mx-auto py-10"

@@ -18,7 +18,7 @@ const Chefs = () => {
   }, []);
 
   return (
-    <div className=" ">
+    <div className=" dark:bg-black">
       {loading ? (
         <InfinitySpin width="200" color="#4fa94d" />
       ) : (

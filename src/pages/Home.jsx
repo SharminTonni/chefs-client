@@ -10,7 +10,7 @@ const Home = () => {
   return (
     // -----------------banner section---------------
     // ----------------------------------------------
-    <div className="bg">
+    <div className="bg dark:bg-black">
       <div className="w-1/3 ms-28 mt-18 py-6 h-full">
         <div className="mt-36 font-serif">
           <h2 className="text-4xl font-bold text-amber-400">
