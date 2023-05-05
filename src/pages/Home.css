@@ -9,3 +9,32 @@
   object-fit: cover;
   background-position: center;
 }
+
+.bg-area {
+  /* position: fixed;
+  left: -50%;
+  right: -50%; */
+  /* animation: animate 5s ease-in-out infinite alternate; */
+  background: linear-gradient(to right, #159957, #3393f3);
+  /* opacity: 0.5; */
+  z-index: -1;
+}
+
+.layers {
+  animation: alternate-reverse;
+  animation-duration: 3s;
+}
+
+.layert {
+  animation-duration: "5s";
+}
+
+@keyframeanimate {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}

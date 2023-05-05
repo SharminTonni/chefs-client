@@ -38,7 +38,7 @@ const Header = () => {
                   <img
                     className="w-16 rounded-full text-center mx-auto"
                     src={user?.photoURL}
-                    alt="user photo"
+                    alt={user?.displayName}
                   />
                 </div>
               </>
@@ -66,6 +66,7 @@ const Header = () => {
       <div className="text-2xl font-semibold  flex justify-between w-1/3 text-center gap-3 font-serif">
         <ActiveLink to="/">Home</ActiveLink>
         <ActiveLink to="/blog">Blog</ActiveLink>
+        <ActiveLink to="/favorite">Favorite</ActiveLink>
         <ActiveLink to="/login">Login</ActiveLink>
         <ActiveLink to="/signup">SignUp</ActiveLink>
       </div>

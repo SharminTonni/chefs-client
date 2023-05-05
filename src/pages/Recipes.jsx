@@ -6,6 +6,7 @@ import { removeItem } from "localforage";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Footer from "./Footer";
+import "./Home.css";
 
 const Recipes = () => {
   const chefs = useLoaderData();
@@ -25,8 +26,9 @@ const Recipes = () => {
       });
   }, []);
   console.log(recipes);
+
   return (
-    <div className="  h-full">
+    <div className=" h-full">
       {loading ? (
         <progress
           className="progress progress-info w-56"
@@ -35,8 +37,8 @@ const Recipes = () => {
         ></progress>
       ) : (
         <>
-          <div className="bg-gradient-to-r from-indigo-300 py-20 flex mt-10">
-            <div>
+          <div className="bg-area py-20 flex mt-10">
+            <div className="">
               <img
                 style={{ width: "100vw" }}
                 className="lg:ml-10"
@@ -75,7 +77,7 @@ const Recipes = () => {
         Footer Section
 
       */}
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 };

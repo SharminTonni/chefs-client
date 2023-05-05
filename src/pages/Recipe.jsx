@@ -4,15 +4,20 @@ import { FaCheck, FaHeart } from "react-icons/fa";
 
 import "@smastrom/react-rating/style.css";
 import { ToastContainer, toast } from "react-toastify";
+import { addtoDB } from "../utilites/FakeDB";
 
 const Recipe = ({ recipe }) => {
-  const { recipe_name, ingredients, image, cooking_method, rating } = recipe;
+  const { recipe_name, ingredients, image, cooking_method, rating, id } =
+    recipe;
 
   const [isDisabled, setDisabled] = useState(false);
 
-  const handleFavorite = () => {
+  const handleFavorite = (id) => {
     setDisabled(true);
-    toast("added as favorite");
+    toast("added as favorite", {
+      autoClose: 1000,
+    });
+    addtoDB(id);
   };
   return (
     <div className="card w-full bg-gradient-to-r from-indigo-400  shadow-xl image-full">
@@ -40,7 +45,7 @@ const Recipe = ({ recipe }) => {
             <span>{rating}</span>
           </p>
           <button
-            onClick={handleFavorite}
+            onClick={() => handleFavorite(id)}
             disabled={isDisabled}
             className="btn btn-primary"
           >

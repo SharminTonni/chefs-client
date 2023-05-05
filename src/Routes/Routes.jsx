@@ -8,6 +8,8 @@ import SignUp from "../forms/SignUp";
 import ErrorPage from "../pages/ErrorPage";
 import Blog from "../pages/Blog";
 import PrivateRoute from "./PrivateRoute";
+import Favorite from "../pages/Favorite";
+import cartLoader from "../CustomLoader/cartLoader";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,15 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/favorite",
+        element: (
+          <PrivateRoute>
+            <Favorite></Favorite>
+          </PrivateRoute>
+        ),
+        loader: cartLoader,
       },
       {
         path: "chef/:id",
