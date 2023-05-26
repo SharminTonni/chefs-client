@@ -76,7 +76,7 @@ const Login = () => {
       });
   };
   return (
-    <div>
+    <div className="dark:bg-black ">
       <form
         onSubmit={handleLogIn}
         className="hero  bg-base-200 mt-10 w-5/6 mx-auto py-10"
